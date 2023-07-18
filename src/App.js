@@ -1,25 +1,214 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbarm from "./components/Navbar";
+import Newscompm from "./components/Newscomp";
+import Stockkakaam from "./components/Stock";
+import Loginm from "./components/Login";
+import Signupm from "./components/Sign";
+import NoteState from "./context/comments/Cmntstate";
+// import Register from "./components/Register";
+// import Login from "./components/Login";
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      mode: "black",
+      altermode:"white",
+      sign:"in"
+    }
+  }
+  onModeChange = () => {
+    this.setState((prevState) => ({
+      mode: prevState.mode === "black" ? "white" : "black",
+      altermode : prevState.altermode==="white"?"black" :"white"
+    }));
+  };
+  onSignChange=()=>{
+    this.setState((prevState) => ({
+      sign:prevState.sign==="in"?"out":"in"
+    }));
+  };
+  render() {
+    
+    return (
+      <div>
+        <Router>
+          <Navbarm 
+            altermode={this.state.altermode} 
+            mode={this.state.mode}  
+            onModeChange={this.onModeChange}
+            sign={this.state.sign}
+            onSignChange={this.onSignChange}
+          />
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <div>
+                  <Stockkakaam
+                    altermode={this.state.altermode} 
+                    mode={this.state.mode}  
+                    onModeChange={this.onModeChange}
+                  />
+                  <Newscompm
+                    key="general"
+                    pageSize={8}
+                    country="in"
+                    category="general"
+                    altermode={this.state.altermode} 
+                    mode={this.state.mode}  
+                  />
+                    
+                </div>
+              }
+            ></Route>
+            <Route
+              exact
+              path="/Business"
+              element={
+                <div>
+                <Stockkakaam
+                  altermode={this.state.altermode} 
+                  mode={this.state.mode}  
+                  onModeChange={this.onModeChange}
+                />
+                <Newscompm
+                  key="business"
+                  pageSize={8}
+                  country="in"
+                  category="business"
+                  altermode={this.state.altermode} 
+                  mode={this.state.mode}
+                />
+                </div>
+              }
+            ></Route>
+            <Route
+              exact
+              path="/Entertainment"
+              element={
+                <div>
+                <Stockkakaam
+                  altermode={this.state.altermode} 
+                  mode={this.state.mode}  
+                  onModeChange={this.onModeChange}
+                />
+                <Newscompm
+                  key="entertainment"
+                  pageSize={8}
+                  country="in"
+                  category="entertainment"
+                  altermode={this.state.altermode} 
+                  mode={this.state.mode}
+                />
+                </div>
+              }
+            ></Route>
+            <Route
+              exact
+              path="/health"
+              element={
+                <div>
+                <Stockkakaam
+                  altermode={this.state.altermode} 
+                  mode={this.state.mode}  
+                  onModeChange={this.onModeChange}
+                />
+                <Newscompm
+                  key="health"
+                  pageSize={8}
+                  country="in"
+                  category="health"
+                  altermode={this.state.altermode} 
+                  mode={this.state.mode}
+                />
+                </div>
+              }
+            ></Route>
+            <Route
+              exact
+              path="/Science"
+              element={
+                <div>
+                <Stockkakaam
+                  altermode={this.state.altermode} 
+                  mode={this.state.mode}  
+                  onModeChange={this.onModeChange}
+                />
+                <Newscompm
+                  key="science"
+                  pageSize={8}
+                  country="in"
+                  category="science"
+                  altermode={this.state.altermode} 
+                  mode={this.state.mode}
+                />
+                </div>
+              }
+            ></Route>
+            <Route
+              exact
+              path="/sports"
+              element={
+                <div>
+                <Stockkakaam
+                  altermode={this.state.altermode} 
+                  mode={this.state.mode}  
+                  onModeChange={this.onModeChange}
+                />
+                <Newscompm
+                  key="sports"
+                  pageSize={8}
+                  country="in"
+                  category="sports"
+                  altermode={this.state.altermode} 
+                  mode={this.state.mode}
+                />
+                </div>
+              }
+            ></Route>
+            <Route
+              exact
+              path="/Technology"
+              element={
+                <div>
+                <Stockkakaam
+                  altermode={this.state.altermode} 
+                  mode={this.state.mode}  
+                  onModeChange={this.onModeChange}
+                />
+                <Newscompm
+                  key="technology"
+                  pageSize={8}
+                  country="in"
+                  category="technology"
+                  altermode={this.state.altermode} 
+                  mode={this.state.mode}
+                />
+                </div>
+              }
+            ></Route>
+            <Route
+              exact path="/login"
+              element={
+                <Loginm
+                
+                />
+              }  
+            ></Route>
+            <Route
+              exact path="/signup"
+              element={
+                <Signupm
+                
+                />
+              }
+            ></Route>
+          </Routes>
+        </Router>
+      </div>
+    );
+  }
 }
-
-export default App;
