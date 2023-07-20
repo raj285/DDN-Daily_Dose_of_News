@@ -37,7 +37,7 @@ export default class Newscomp extends Component {
   //  async will wait(await) till the promise get resolves
   async componentDidMount() {
     // console.log('cdm');
-    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+    let proxyUrl = "https://cors-anywhere.herokuapp.com/";
     let url = `${proxyUrl}https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=70dc53c6270d49b7a04a54041fc82b0b&page=1&pageSize=${this.props.ps}`;
     // let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=70dc53c6270d49b7a04a54041fc82b0b&page=1&pageSize=${this.props.ps}`;
     // fetchng api;
