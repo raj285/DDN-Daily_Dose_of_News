@@ -5,12 +5,9 @@ import Newscompm from "./components/Newscomp";
 import Stockkakaam from "./components/Stock";
 import Loginm from "./components/Login";
 import Signupm from "./components/Sign";
-import NoteState from "./context/comments/Cmntstate";
-// import Register from "./components/Register";
-// import Login from "./components/Login";
 export default class App extends Component {
   constructor(props) {
-    super(props);
+    super(props);//used to call the constructor of the parent class (in this case, Component).
     this.state = {
       mode: "black",
       altermode:"white",
@@ -18,14 +15,14 @@ export default class App extends Component {
     }
   }
   onModeChange = () => {
-    this.setState((prevState) => ({
-      mode: prevState.mode === "black" ? "white" : "black",
-      altermode : prevState.altermode==="white"?"black" :"white"
+    this.setState((pichhla) => ({
+      mode: pichhla.mode === "black" ? "white" : "black",
+      altermode : pichhla.altermode==="white"?"black" :"white"
     }));
   };
   onSignChange=()=>{
-    this.setState((prevState) => ({
-      sign:prevState.sign==="in"?"out":"in"
+    this.setState((pichhla) => ({
+      sign:pichhla.sign==="in"?"out":"in"
     }));
   };
   render() {
