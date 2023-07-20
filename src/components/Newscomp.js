@@ -53,7 +53,8 @@ export default class Newscomp extends Component {
   }
   presa = async () => {
     // console.log('pres')
-    let url = `https://newsapi.org/v2/top-headlines?country=${
+    let proxyUrl = "https://cors-anywhere.herokuapp.com/";
+    let url = `${proxyUrl}https://newsapi.org/v2/top-headlines?country=${
       this.props.country
     }&category=${
       this.props.category
@@ -74,7 +75,8 @@ export default class Newscomp extends Component {
   // from news api we can see pagesize(articles in 1 page) and total result
   nexta = async () => {
     // console.log('neata')
-    let url = `https://newsapi.org/v2/top-headlines?country=${
+    let proxyUrl = "https://cors-anywhere.herokuapp.com/";
+    let url = `${proxyUrl}https://newsapi.org/v2/top-headlines?country=${
       this.props.country
     }&category=${
       this.props.category
@@ -153,6 +155,8 @@ export default class Newscomp extends Component {
     );
   }
 }
+
+
 
 // import React, { Component } from "react";
 // import Newsitem from "./Newsitem";
