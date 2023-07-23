@@ -41,7 +41,11 @@ export default function Sign() {
   };
 
   const { email_id, password } = credentials;
+  const stylingbody={
+    marginTop:'90px'
+  }
   return (
+    <div style={stylingbody}>
     <div className="container">
       <form onSubmit={handleonSubmit}>
       <div className="mb-3">
@@ -99,6 +103,7 @@ export default function Sign() {
           Submit
         </button>
       </form>
+    </div>
     </div>
   );
 }

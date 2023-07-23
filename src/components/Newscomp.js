@@ -1,67 +1,52 @@
-import React, { Component } from "react";
+import React, { useEffect,useState} from "react";
 import Newsitem from "./Newsitem";
 import Spinner from "./Spinner";
 import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
-export default class Newscomp extends Component {
-  static defaultProps = {
-    // proptype can also be written
-    country: "in", // it's mean by default country is india
-    ps: 6,
-    category: "general",
-  };
-  static propTypes = {
-    category: PropTypes.string,
-    pageSize: PropTypes.number,
-    country: PropTypes.string,
-  };
-  constructor(props) {
-    super(props);
+const  Newscomp = (props)=> {
+  const [articles,setArticles]=useState([])
+  const [loading,setLoading]=useState(false)
+  const [page,setPage]=useState(1)
+  const [totalResults,setTotalResults]=useState(0)
     // console.log(`hello i am a constructor from newscomp`)
     // we can change state of card below from here only
     // here we are creating a state
-    this.state = {
-      articles: [],
-      loading: false,
-      page: 1,
-      totalResults:0
-    };
-    document.title = `News Monkey -${this.props.category}`;
-  } // it is a life cycle method , after render it will run
+    
+  // it is a life cycle method , after render it will run
   // 1->constructor ,2-> render,3-> cdm
   //  async will wait(await) till the promise get resolves
-  async componentDidMount() {
+
+  const updateNews = async() =>{
     // console.log('cdm');
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=70dc53c6270d49b7a04a54041fc82b0b&page=1&pageSize=${this.props.ps}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=70dc53c6270d49b7a04a54041fc82b0b&page=1&pageSize=${props.ps}`;
     // fetchng api;
-    this.setState({ loading: true });
+    setLoading(true)
     let data = await fetch(url);
-    let parseddata = await data.json();
+    let parseddata = await data.json(); 
     // console.log(parseddata)
-    this.setState({
-      articles: parseddata.articles,
-      totalResults: parseddata.totalResults,
-      loading: false,
-    });
+    setArticles(parseddata.articles)
+    setTotalResults(parseddata.totalResults)
+    setLoading(false)
   }
-fetchMoreData =async()=>{
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&page=${this.state.page+1}&apiKey=70dc53c6270d49b7a04a54041fc82b0b&page=1&pageSize=${this.props.ps}`;
+  useEffect(()=>{
+    document.title = `News Monkey -${props.category}`;
+    updateNews();
+  }, [props.category, props.country, props.ps]);
+const fetchMoreData =async()=>{
+    let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&page=${page+1}&apiKey=70dc53c6270d49b7a04a54041fc82b0b&page=1&pageSize=${props.ps}`;
     // fetchng api;
-    this.setState({ loading: true });
+    // setState({ loading: true });
+    setLoading(true)
     let data = await fetch(url);
     let parseddata = await data.json();
     // console.log(parseddata)
-    this.setState({
-      articles: this.state.articles.concat(parseddata.articles),
-      totalResults: parseddata.totalResults,
-      loading: false,
-      page: this.state.page + 1,
-    });
-    
+    setArticles((prevArticles) => [...prevArticles, ...parseddata.articles])
+    setTotalResults(parseddata.totalResults)
+    setLoading(false)
+    setPage(page+1)
   }
   
-  render() {
-    const {mode,altermode}=this.props;
+    const {mode,altermode}=props;
     const stylingbody={
       color:mode,
       backgroundColor:altermode,
@@ -70,20 +55,20 @@ fetchMoreData =async()=>{
       <>
       <div style={stylingbody}>
         <h1 className="text-center">
-          <b>{this.props.category} highlights</b>
+          <b>{props.category} highlights</b>
         </h1>
-        {this.state.loading && <Spinner />}
+        {loading && <Spinner />}
         <InfiniteScroll
-          dataLength={this.state.articles.length}
-          next={this.fetchMoreData}
-          hasMore={this.state.articles.length!==this.state.totalResults}
+          dataLength={articles.length}
+          next={fetchMoreData}
+          hasMore={articles.length!==totalResults}
           loader={<Spinner/>}
         >
           <div className="container">
         <div className="row">
           {
-            this.state.articles.length > 0 &&
-            this.state.articles.map((element) => (
+            articles.length > 0 &&
+            articles.map((element) => (
               <div className="col-md-4 my-5" key={element.url}>
                 <Newsitem
                   title={element.title}
@@ -107,29 +92,39 @@ fetchMoreData =async()=>{
       </div>
       </>
     );
-  }
 }
+  Newscomp.defaultProps = {
+  // proptype can also be written
+  country: "in", // it's mean by default country is india
+  ps: 6,
+  category: "general",
+};
+Newscomp.propTypes = {
+  category: PropTypes.string,
+  pageSize: PropTypes.number,
+  country: PropTypes.string,
+};
 
-
+export default Newscomp;
 
 // just above randor
 /* 
 // presa = async () => {
   //   // console.log('pres')
   //   let url = `https://newsapi.org/v2/top-headlines?country=${
-  //     this.props.country
+  //     props.country
   //   }&category=${
-  //     this.props.category
+  //     props.category
   //   }&apiKey=70dc53c6270d49b7a04a54041fc82b0b&page=${
-  //     this.state.page - 1
-  //   }&pageSize=${this.props.ps}`;
+  //     page - 1
+  //   }&pageSize=${props.ps}`;
   //   // fetchng api;
-  //   this.setState({ loading: true });
+  //   setState({ loading: true });
   //   let data = await fetch(url);
   //   let parseddata = await data.json();
   //   console.log(parseddata);
-  //   this.setState({
-  //     page: this.state.page - 1,
+  //   setState({
+  //     page: page - 1,
   //     loading: false,
   //     articles: parseddata.articles,
   //   });
@@ -138,21 +133,21 @@ fetchMoreData =async()=>{
   // nexta = async () => {
   //   // console.log('neata')
   //   let url = `https://newsapi.org/v2/top-headlines?country=${
-  //     this.props.country
+  //     props.country
   //   }&category=${
-  //     this.props.category
+  //     props.category
   //   }&apiKey=70dc53c6270d49b7a04a54041fc82b0b&page=${
-  //     this.state.page + 1
-  //   }&pageSize=${this.props.ps}`;
+  //     page + 1
+  //   }&pageSize=${props.ps}`;
   //   // fetchng api;
   //   // loading will run till this url is hitted and getting fetched
-  //   this.setState({ loading: true });
+  //   setState({ loading: true });
   //   let data = await fetch(url);
   //   let parseddata = await data.json();
 
   //   console.log(parseddata);
-  //   this.setState({
-  //     page: this.state.page + 1,
+  //   setState({
+  //     page: page + 1,
   //     articles: parseddata.articles,
   //     loading: false,
   //   });
@@ -162,24 +157,23 @@ fetchMoreData =async()=>{
 
 
 
-/*
-          <button
-            type="button"
-            disabled={this.state.page <= 1}
-            className="btn btn-dark mx-3"
-            onClick={this.presa}
-          >
-            &larr; Prev
-          </button>
-          <button
-            type="button"
-            disabled={
-              this.state.page >=
-              Math.ceil(this.state.totalResults / this.props.ps)
-            }
-            className="btn btn-dark mx-3"
-            onClick={this.nexta}
-          >
-            Next &rarr;
-          </button> 
-*/
+
+          // <button
+          //   type="button"
+          //   disabled={page <= 1}
+          //   className="btn btn-dark mx-3"
+          //   onClick={presa}
+          // >
+          //   &larr; Prev
+          // </button>
+          // <button
+          //   type="button"
+          //   disabled={
+          //     page >=
+          //     Math.ceil(totalResults / props.ps)
+          //   }
+          //   className="btn btn-dark mx-3"
+          //   onClick={nexta}
+          // >
+          //   Next &rarr;
+          // </button> 

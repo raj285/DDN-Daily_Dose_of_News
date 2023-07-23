@@ -16,9 +16,13 @@ export default class Stock extends Component {
     let data=await fetch(url);
     let parsedData=await data.json();
     // console.log(data);
-    this.setState({top_gainers:parsedData.top_gainers.slice(0, 5)})
-    this.setState({top_losers:parsedData.top_losers.slice(0, 5)})
-    this.setState({most_actively_traded:parsedData.most_actively_traded.slice(0, 5)})
+    if (parsedData?.top_gainers && parsedData?.top_losers && parsedData?.most_actively_traded) {
+      this.setState({
+        top_gainers: parsedData.top_gainers.slice(0, 5),
+        top_losers: parsedData.top_losers.slice(0, 5),
+        most_actively_traded: parsedData.most_actively_traded.slice(0, 5),
+      });
+    } 
   }
   
   render() {
@@ -26,6 +30,7 @@ export default class Stock extends Component {
     const stylingbody={
       color:mode,
       backgroundColor:altermode,
+      marginTop:'90px'
     }
     return (
       <div style={stylingbody}>

@@ -8,7 +8,7 @@ export default class navbar extends Component {
     };
     return (
       <div>
-        <nav className={`navbar navbar-expand-lg bg-${mode} `}>
+        <nav className={`navbar fixed-top navbar-expand-lg bg-${mode} `}>
           <div className="container-fluid" >
             <a className="navbar-brand" href="/" style={stylingofnavbar}>
               <b>Daily Dose of News</b>

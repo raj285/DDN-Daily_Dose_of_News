@@ -37,8 +37,11 @@ const Login = () => {
   };
 
   const { email_id, password } = credentials;
-
+  const stylingbody={
+    marginTop:'90px'
+  }
   return (
+    <div style={stylingbody}>
     <div className="container">
       <form onSubmit={handleOnSubmit}>
         <div className="mb-3">
@@ -75,6 +78,7 @@ const Login = () => {
           Submit
         </button>
       </form>
+    </div>
     </div>
   );
 };
