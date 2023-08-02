@@ -17,8 +17,7 @@ const  Newscomp = (props)=> {
   //  async will wait(await) till the promise get resolves
 
   const updateNews = async() =>{
-    // console.log('cdm');
-    let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=70dc53c6270d49b7a04a54041fc82b0b&page=1&pageSize=${props.ps}`;
+    let url=`https://gnews.io/api/v4/search?q=example&country=${props.country}&category=${props.category}&apikey=31b0d34637a78ac885b15cd02139c2bd`
     // fetchng api;
     setLoading(true)
     let data = await fetch(url);
@@ -33,7 +32,8 @@ const  Newscomp = (props)=> {
     updateNews();
   }, [props.category, props.country, props.ps]);
 const fetchMoreData =async()=>{
-    let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&page=${page+1}&apiKey=70dc53c6270d49b7a04a54041fc82b0b&page=1&pageSize=${props.ps}`;
+    // let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&page=${page+1}&apiKey=70dc53c6270d49b7a04a54041fc82b0b&page=1&pageSize=${props.ps}`;
+    let url=`https://gnews.io/api/v4/search?q=example&country=${props.country}&category=${props.category}&apikey=31b0d34637a78ac885b15cd02139c2bd`
     // fetchng api;
     // setState({ loading: true });
     setLoading(true)
@@ -73,7 +73,7 @@ const fetchMoreData =async()=>{
                 <Newsitem
                   title={element.title}
                   description={element.description}
-                  imageurl={element.urlToImage}
+                  imageurl={element.image}
                   newsUrl={element.url}
                   date={element.publishedAt}
                   publisher={
