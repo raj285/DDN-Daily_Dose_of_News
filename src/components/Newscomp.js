@@ -8,16 +8,10 @@ const  Newscomp = (props)=> {
   const [loading,setLoading]=useState(false)
   const [page,setPage]=useState(1)
   const [totalResults,setTotalResults]=useState(0)
-    // console.log(`hello i am a constructor from newscomp`)
-    // we can change state of card below from here only
-    // here we are creating a state
-    
-  // it is a life cycle method , after render it will run
-  // 1->constructor ,2-> render,3-> cdm
-  //  async will wait(await) till the promise get resolves
-
+ 
   const updateNews = async() =>{
-    let url=`https://gnews.io/api/v4/search?q=example&country=${props.country}&category=${props.category}&apikey=31b0d34637a78ac885b15cd02139c2bd`
+    // let url=`https://gnews.io/api/v4/search?q=example&country=${props.country}&category=${props.category}&apikey=31b0d34637a78ac885b15cd02139c2bd`
+    let url=`https://gnews.io/api/v4/top-headlines?category=${props.category}&max=100&country=${props.country}&apikey=31b0d34637a78ac885b15cd02139c2bd`
     // fetchng api;
     setLoading(true)
     let data = await fetch(url);
@@ -32,7 +26,8 @@ const  Newscomp = (props)=> {
     updateNews();
   }, [props.category, props.country, props.ps]);
 const fetchMoreData =async()=>{
-    let url=`https://gnews.io/api/v4/search?q=example&country=${props.country}&category=${props.category}&apikey=31b0d34637a78ac885b15cd02139c2bd`
+    // let url=`https://gnews.io/api/v4/search?q=example&country=${props.country}&category=${props.category}&apikey=31b0d34637a78ac885b15cd02139c2bd`
+    let url=`https://gnews.io/api/v4/top-headlines?category=${props.category}&max=100&country=${props.country}&apikey=31b0d34637a78ac885b15cd02139c2bd`
     // fetchng api;
     // setState({ loading: true });
     setLoading(true)
