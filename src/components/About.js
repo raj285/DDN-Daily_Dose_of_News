@@ -1,51 +1,24 @@
-// export default function About() {
-//     let ms={// this is an object
-//         color :'white',
-//         backgroundColor :'black'
-//     }
+import React from "react";
 
-//   return (
-//     <div className='container my-3 '  style={ms}>
-//         <h1>About Us</h1>
-//        <div className="accordion" id="accordionExample">
-//   <div className="accordion-item">
-//     <h2 className="accordion-header">
-//       <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style={ms}>
-//         Accordion Item #1
-//       </button>
-//     </h2>
-//     <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-//       <div className="accordion-body">
-//         <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-//       </div>
-//     </div>
-//   </div>
-//   <div className="accordion-item">
-//     <h2 className="accordion-header">
-//       <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style={ms}>
-//         Accordion Item #2
-//       </button>
-//     </h2>
-//     <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
-//       <div className="accordion-body">
-//         <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-//       </div>
-//     </div>
-//   </div>
-//   <div className="accordion-item">
-//     <h2 className="accordion-header">
-//       <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style={ms}>
-//         Accordion Item #3
-//       </button>
-//     </h2>
-//     <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
-//       <div className="accordion-body">
-//         <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-//       </div>
-//     </div>
-//   </div>
-// </div>
-// {/* <button onClick={changec} type="button" className="btn btn-primary my-3" >{bt}</button> */}
-//     </div>
-//   )
-// }
+export default function About() {
+  return (
+    <div className="container my-3 ">
+      <h1 style={{ textAlign: "center" }}>About Us</h1>
+      <div className="row">
+        <div className="col-md-6" style={{ display :'flex',justifyContent:'center' }}>
+          <h1>yebjjnkfdjgrftjfgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg</h1>
+          <p>
+            dkjhffhgfdbdfnbibkjjfdhgdkdmdfzhgrtsoijgrthrehfsdofzdfgbjxnfdxbdfyvgdrjrfrtdngbuhvkbvfdx,jhgsulehgdthdxjhofgyuse
+          </p>
+        </div>
+        <div className="col-md-6" style={{ display :'flex',justifyContent:'center' }}>
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/007/252/197/large_2x/female-news-reporter-cartoon-character-free-vector.jpg"
+            alt="Description of the image"
+            style={{ height: "50vh", width: "25vw"}}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}

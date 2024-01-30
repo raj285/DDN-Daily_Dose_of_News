@@ -10,7 +10,7 @@ export default class navbar extends Component {
       <div>
         <nav className={`navbar fixed-top navbar-expand-lg bg-${mode} `}>
           <div className="container-fluid" >
-            <a className="navbar-brand" href="/" style={stylingofnavbar}>
+            <a className="navbar-brand" href="/about" style={stylingofnavbar}>
               <b>Daily Dose Of News</b>
             </a>
             <button

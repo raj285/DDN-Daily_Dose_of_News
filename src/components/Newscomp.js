@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Newsitem from "./Newsitem";
-import Spinner from "./Spinner";
+// import Spinner from "./Spinner";
 import PropTypes from "prop-types";
 import gs from './jsfile/general.json';
 import gssc from './jsfile/science.json';
@@ -12,9 +12,9 @@ import gsb from './jsfile/business.json';
 const Newscomp = (props) => {
   // initializing set data
   const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [page, setPage] = useState(1);
-  const [totalResults, setTotalResults] = useState(0);
+  // const [loading, setLoading] = useState(false);
+  // const [page, setPage] = useState(1);
+  // const [totalResults, setTotalResults] = useState(0);
 
 useEffect(()=>{
   if(props.category==='general'){
@@ -38,7 +38,7 @@ useEffect(()=>{
   else if(props.category==='business'){
     setArticles(gsb.articles);
     }   
-})
+},[])
   
   console.log(articles);
 

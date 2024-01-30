@@ -5,7 +5,7 @@ import Newscompm from "./components/Newscomp";
 import Stockkakaam from "./components/Stock";
 import Loginm from "./components/Login";
 import Signupm from "./components/Sign";
-
+import About from "./components/About";
 
 export default function App(props){
   const [mode,setMode]=useState("black");
@@ -69,6 +69,25 @@ export default function App(props){
                 </div>
               }
             ></Route>
+            <Route
+              exact
+              path="/about"
+              element={
+                <div>
+                  <Stockkakaam
+                    altermode={altermode} 
+                    mode={mode}  
+                    onModeChange={onModeChange}
+                  />
+                  <About
+                    key="About"
+                    altermode={altermode} 
+                    mode={mode}  
+                  />
+                    
+                </div>
+              }
+            ></Route>            
             <Route
               exact
               path="/Business"
