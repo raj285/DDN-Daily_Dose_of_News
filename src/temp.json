@@ -1,107 +1,125 @@
 {
-    "status": "OK",
-    "copyright": "Copyright (c) 2023 The New York Times Company. All Rights Reserved.",
-    "response": {
-      "docs": [
-        {
-          "abstract": "Three seats in Parliament recently occupied by Conservatives are up for grabs in an election that may show which way the political winds are blowing.",
-          "web_url": "https://www.nytimes.com/2023/07/20/world/europe/uk-by-elections-johnson-sunak.html",
-          "snippet": "Three seats in Parliament recently occupied by Conservatives are up for grabs in an election that may show which way the political winds are blowing.",
-          "lead_paragraph": "One of the last things Britain’s prime minister, Rishi Sunak, needs right now, while he’s trailing in the opinion polls as the economy stalls, is a test of his electoral popularity.",
-          "source": "The New York Times",
-          "multimedia": [
-            {
-              "rank": 0,
-              "subtype": "videoSixteenByNine96",
-              "caption": null,
-              "credit": null,
-              "type": "image",
-              "url": "images/2023/07/20/multimedia/20uk-election-explainer-1-khvt/20uk-election-explainer-1-khvt-videoSixteenByNine96.jpg",
-              "height": 54,
-              "width": 96,
-              "legacy": {
-                
-              },
-              "subType": "videoSixteenByNine96",
-              "crop_name": "videoSixteenByNine96"
-            },
-            {
-              "rank": 0,
-              "subtype": "videoSixteenByNine3000",
-              "caption": null,
-              "credit": null,
-              "type": "image",
-              "url": "images/2023/07/20/multimedia/20uk-election-explainer-1-khvt/20uk-election-explainer-1-khvt-videoSixteenByNine3000.jpg",
-              "height": 1687,
-              "width": 3000,
-              "legacy": {
-                
-              },
-              "subType": "videoSixteenByNine3000",
-              "crop_name": "videoSixteenByNine3000"
-            }
-            
-          ],
-          "headline": {
-            "main": "It’s By-election Day in the U.K. What Does That Mean?",
-            "kicker": null,
-            "content_kicker": null,
-            "print_headline": null,
-            "name": null,
-            "seo": null,
-            "sub": null
-          },
-          "keywords": [
-            {
-              "name": "glocations",
-              "value": "Great Britain",
-              "rank": 10,
-              "major": "N"
-            },
-            {
-              "name": "glocations",
-              "value": "Frome (England)",
-              "rank": 11,
-              "major": "N"
-            },
-            {
-              "name": "glocations",
-              "value": "Uxbridge (England)",
-              "rank": 12,
-              "major": "N"
-            }
-          ],
-          "pub_date": "2023-07-20T07:00:11+0000",
-          "document_type": "article",
-          "news_desk": "Foreign",
-          "section_name": "World",
-          "subsection_name": "Europe",
-          "byline": {
-            "original": "By Stephen Castle",
-            "person": [
-              {
-                "firstname": "Stephen",
-                "middlename": null,
-                "lastname": "Castle",
-                "qualifier": null,
-                "title": null,
-                "role": "reported",
-                "organization": "",
-                "rank": 1
-              }
-            ],
-            "organization": null
-          },
-          "type_of_material": "News",
-          "_id": "nyt://article/72b5fc60-c22b-5298-ab65-cfd17e89afe3",
-          "word_count": 718,
-          "uri": "nyt://article/72b5fc60-c22b-5298-ab65-cfd17e89afe3"
-        }
-      ],
-      "meta": {
-        "hits": 929138,
-        "offset": 0,
-        "time": 119
-      }
-    }
+  "totalArticles": 8416,
+  "articles": [
+  {
+  "title": "Star Wars Jedi: Survivor Is Coming To PS4, Xbox One",
+  "description": "Respawn’s critically acclaimed game was touted as an example of what ‘next-gen’ consoles could do",
+  "content": "Respawn and Electronic Arts’ popular single-player Star Wars sequel, Jedi: Survivor, is making the leap from current-gen to the older PlayStation 4 and Xbox One consoles.\nLaunched in April, Star Wars Jedi: Survivor is the follow-up to 2019’s Jedi: Fa... [2337 chars]",
+  "url": "https://kotaku.com/star-wars-jedi-survivor-ea-ps4-xbox-one-next-gen-ports-1850697840",
+  "image": "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/927f8932b40a5edadba68ef7a1435a36.jpg",
+  "publishedAt": "2023-08-01T22:41:21Z",
+  "source": {
+  "name": "Kotaku",
+  "url": "https://kotaku.com"
+  }
+  },
+  {
+  "title": "The fate of the N.H. nurse and her daughter kidnapped by armed men in Haiti remains uncertain",
+  "description": "Around 200 Haitians had marched in their nation's capital Monday to show their anger over an abduction that’s another example of the worsening gang violence that has overtaken much of Port-au-Prince.",
+  "content": "Alix Dorsainvil of New Hampshire was working for El Roi Haiti, a nonprofit Christian ministry, when she and her daughter were seized Thursday. She is the wife of its founder, Sandro Dorsainvil.\nAround 200 Haitians had marched in their nation's capita... [3955 chars]",
+  "url": "https://www.bostonglobe.com/2023/08/01/metro/fate-american-nurse-her-daughter-kidnapped-by-armed-men-haiti-remains-uncertain/",
+  "image": "https://bostonglobe-prod.cdn.arcpublishing.com/resizer/Gw81-GTHhKMgb5sVxGXwAigV_Gk=/506x0/cloudfront-us-east-1.images.arcpublishing.com/bostonglobe/PXTIQNMHRZGJXO3F24C6NAU6EE.jpeg",
+  "publishedAt": "2023-08-01T04:00:00Z",
+  "source": {
+  "name": "The Boston Globe",
+  "url": "https://www.bostonglobe.com"
+  }
+  },
+  {
+  "title": "Call for unprecedented AFL punishment after Port Adelaide ‘disgrace’",
+  "description": "There are calls for Port Adelaide to be made an example of as the club braces to learn what action the AFL will take over Aliir Aliir’s head injury.",
+  "content": "There are calls for Port Adelaide to be made an example of as the club braces to learn what action the AFL will take over Aliir Aliir’s head injury.\nThe star defender returned to the field of play only eight minutes after he was helped off the ground... [4383 chars]",
+  "url": "https://www.news.com.au/sport/afl/call-for-unprecedented-afl-punishment-after-port-adelaide-disgrace/news-story/3029338fb7ca2987f024236227d9362d",
+  "image": "https://content.api.news/v3/images/bin/e53b39ab45da6a337e7e4770b02d6786",
+  "publishedAt": "2023-08-01T01:47:00Z",
+  "source": {
+  "name": "NEWS.com.au",
+  "url": "https://www.news.com.au"
+  }
+  },
+  {
+  "title": "Women's World Cup: Stanway ready to step up as England play China in final group game",
+  "description": "Stanway says she feels a \"lot more mature\" and is prepared to \"lead by example\" as England stand on the cusp of the knock-out stages. The Lionesses need a win or draw to guarantee making it through.",
+  "content": "Georgia Stanway says she will lead by example in the absence of midfield partner and best friend Keira Walsh when England take on China in their final Women's World Cup group game.\nWalsh was stretchered off in the first half of England's 1-0 win over... [3226 chars]",
+  "url": "https://news.sky.com/story/womens-world-cup-stanway-ready-to-step-up-as-england-play-china-in-final-group-game-12931504",
+  "image": "https://e3.365dm.com/23/08/1600x900/skynews-georgia-stanway-world-cup_6236634.jpg?20230801002937",
+  "publishedAt": "2023-07-31T23:50:00Z",
+  "source": {
+  "name": "Sky News",
+  "url": "https://news.sky.com"
+  }
+  },
+  {
+  "title": "Dylan Jones: Slowcoach, slug Britain — is this really what we want to become?",
+  "description": "Welcome, then, to Slug Britain. A place that gets slower by the minute. A few days ago, as I was hurtling out of Liverpool Street Tube station at 6.50am, my hand holding my debit card, ready to swipe it against the ticket machine, I walked smack right into an example of just how much Britain, and London in particular I think, has changed since the pandemic.",
+  "content": "W elcome, then, to Slug Britain. A place that gets slower by the minute. A few days ago, as I was hurtling out of Liverpool Street Tube station at 6.50am, my hand holding my debit card, ready to swipe it against the ticket machine, I walked smack rig... [4379 chars]",
+  "url": "https://www.standard.co.uk/comment/dylan-jones-slowcoach-britain-pandemic-b1097742.html",
+  "image": "https://static.standard.co.uk/2023/07/31/12/newFile-2.jpg?width=1200&width=1200&auto=webp&quality=75",
+  "publishedAt": "2023-07-31T11:28:00Z",
+  "source": {
+  "name": "Evening Standard",
+  "url": "https://www.standard.co.uk"
+  }
+  },
+  {
+  "title": "Letters to the Editor - Rep. Jeff Leach, violent predators, Texas leaders",
+  "description": "Re: ‘State lawmaker sets the example — Plano Republican showed courage, put people over party in standing up to Paxton adviser,” Friday editorial. You quote...",
+  "content": "Bible wants light shined\nRe: ‘State lawmaker sets the example — Plano Republican showed courage, put people over party in standing up to Paxton adviser,” Friday editorial.\nAdvertisement\nYou quote Michelle Smith as trying to pressure Republican Rep. J... [5826 chars]",
+  "url": "https://www.dallasnews.com/opinion/letters-to-the-editor/2023/07/31/letters-to-the-editor-southlake-school-policies-violent-predators-texas-leaders/",
+  "image": "https://dmn-dallas-news-prod.cdn.arcpublishing.com/resizer/JGZJACGnO6g267LHJhQ2cBfWNZo=/1200x630/smart/filters:no_upscale()/cloudfront-us-east-1.images.arcpublishing.com/dmn/FOOYXW35KRH5VEYX3RTZNRIDFU.jpg",
+  "publishedAt": "2023-07-31T05:30:00Z",
+  "source": {
+  "name": "The Dallas Morning News",
+  "url": "https://www.dallasnews.com"
+  }
+  },
+  {
+  "title": "Here's how I'd invest $3,000 into ASX dividend stocks to generate passive income for life",
+  "description": "Let's take three shares as an example to see how we can get paid for doing no work.",
+  "content": "Let’s take three shares as an example to see how we can get paid for doing no work.\nHere’s how I’d invest $3,000 into ASX dividend stocks to generate passive income for life\nYou’re reading a free article with opinions that may differ from The Motley ... [3361 chars]",
+  "url": "https://www.fool.com.au/2023/07/31/heres-how-id-invest-3000-into-asx-dividend-stocks-to-generate-passive-income-for-life/",
+  "image": "https://www.fool.com.au/wp-content/uploads/2021/03/GettyImages-183060730-1-1200x675.jpg",
+  "publishedAt": "2023-07-30T23:00:00Z",
+  "source": {
+  "name": "Motley Fool Australia",
+  "url": "https://www.fool.com.au"
+  }
+  },
+  {
+  "title": "How Cristiano Ronaldo taught Diogo Dalot to be Manchester United 'example'",
+  "description": "Man Utd full-back Diogo Dalot has a close relationship with Al-Nassr forward Cristiano Ronaldo and has revealed what he learned from his fellow Portugal international",
+  "content": "Sign up for our daily newsletter to get the day's biggest stories sent direct to your inbox\nSign up for our daily newsletter to get the day's biggest stories sent direct to your inbox\nThere's a lot of love between Manchester United full-back Diogo Da... [3008 chars]",
+  "url": "https://www.manchestereveningnews.co.uk/sport/football/football-news/manchester-united-cristiano-ronaldo-dalot-27417564",
+  "image": "https://i2-prod.manchestereveningnews.co.uk/incoming/article27417559.ece/ALTERNATES/s1200/0_Portugal-v-Ghana-Group-H-FIFA-World-Cup-Qatar-2022.jpg",
+  "publishedAt": "2023-07-29T18:00:00Z",
+  "source": {
+  "name": "Manchester Evening News",
+  "url": "https://www.manchestereveningnews.co.uk"
+  }
+  },
+  {
+  "title": "Texas university system sets a bad example",
+  "description": "Texas A&M finds itself at the bleeding edge in a way that no university should want to be. While institutions of higher learning vie for the top spot in awards won and research dollars secured, this public university is at the forefront of official censorship.",
+  "content": "Texas A&M finds itself at the bleeding edge in a way that no university should want to be. While institutions of higher learning vie for the top spot in awards won and research dollars secured, this public university is at the forefront of official c... [3302 chars]",
+  "url": "https://www.nydailynews.com/opinion/ny-edit-texas-am-takes-ideological-action-against-faculty-20230729-wnuh2f7morfati5wxtmktem7om-story.html",
+  "image": "https://www.nydailynews.com/resizer/be23mlnBr_mA132f9hxaGVSZGqE=/1200x630/filters:format(jpg):quality(70):focal(3057x2348:3067x2358)/cloudfront-us-east-1.images.arcpublishing.com/tronc/MAEBKELJQBBHLJY4DJXTO2OTAE.jpg",
+  "publishedAt": "2023-07-29T08:00:00Z",
+  "source": {
+  "name": "New York Daily News",
+  "url": "https://www.nydailynews.com"
+  }
+  },
+  {
+  "title": "Study unravels how mitochondria call for help when under stress",
+  "description": "Originally, the powerhouses of higher cells, the mitochondria, were independent organisms. Researchers at Goethe University Frankfurt have investigated to what extent their metabolism has blended with that of their host cells in the course of evolution, using the example of a mitochondrial stress response.",
+  "content": "Originally, the powerhouses of higher cells, the mitochondria, were independent organisms. Researchers at Goethe University Frankfurt have investigated to what extent their metabolism has blended with that of their host cells in the course of evoluti... [4956 chars]",
+  "url": "https://www.news-medical.net/news/20230728/Study-unravels-how-mitochondria-call-for-help-when-under-stress.aspx",
+  "image": "https://d2jx2rerrg6sh3.cloudfront.net/image-handler/picture/2014/7/Stress-620x480.jpg",
+  "publishedAt": "2023-07-28T22:10:00Z",
+  "source": {
+  "name": "News-Medical.net",
+  "url": "https://www.news-medical.net"
+  }
+  }
+  ]
   }

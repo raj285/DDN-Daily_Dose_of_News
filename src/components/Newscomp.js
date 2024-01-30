@@ -1,99 +1,88 @@
-import React, { useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import Newsitem from "./Newsitem";
 import Spinner from "./Spinner";
 import PropTypes from "prop-types";
-import InfiniteScroll from "react-infinite-scroll-component";
-const  Newscomp = (props)=> {
-  const [articles,setArticles]=useState([])
-  const [loading,setLoading]=useState(false)
-  const [page,setPage]=useState(1)
-  const [totalResults,setTotalResults]=useState(0)
-    // console.log(`hello i am a constructor from newscomp`)
-    // we can change state of card below from here only
-    // here we are creating a state
-    
-  // it is a life cycle method , after render it will run
-  // 1->constructor ,2-> render,3-> cdm
-  //  async will wait(await) till the promise get resolves
+import gs from './jsfile/general.json';
+import gssc from './jsfile/science.json';
+import gst from './jsfile/technology.json';
+import gssp from './jsfile/sports.json';
+import gsh from './jsfile/health.json';
+import gse from './jsfile/entertainment.json';
+import gsb from './jsfile/business.json';
+const Newscomp = (props) => {
+  // initializing set data
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [page, setPage] = useState(1);
+  const [totalResults, setTotalResults] = useState(0);
 
-  const updateNews = async() =>{
-    // console.log('cdm');
-    let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=70dc53c6270d49b7a04a54041fc82b0b&page=1&pageSize=${props.ps}`;
-    // fetchng api;
-    setLoading(true)
-    let data = await fetch(url);
-    let parseddata = await data.json(); 
-    // console.log(parseddata)
-    setArticles(parseddata.articles)
-    setTotalResults(parseddata.totalResults)
-    setLoading(false)
-  }
-  useEffect(()=>{
-    document.title = `News Monkey -${props.category}`;
-    updateNews();
-  }, [props.category, props.country, props.ps]);
-const fetchMoreData =async()=>{
-    let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&page=${page+1}&apiKey=70dc53c6270d49b7a04a54041fc82b0b&page=1&pageSize=${props.ps}`;
-    // fetchng api;
-    // setState({ loading: true });
-    setLoading(true)
-    let data = await fetch(url);
-    let parseddata = await data.json();
-    // console.log(parseddata)
-    setArticles((prevArticles) => [...prevArticles, ...parseddata.articles])
-    setTotalResults(parseddata.totalResults)
-    setLoading(false)
-    setPage(page+1)
-  }
-  
-    const {mode,altermode}=props;
-    const stylingbody={
-      color:mode,
-      backgroundColor:altermode,
+useEffect(()=>{
+  if(props.category==='general'){
+    setArticles(gs.articles);
     }
-    return (
-      <>
+  else if(props.category==='science'){
+    setArticles(gssc.articles);
+    }
+  else if(props.category==='technology'){
+    setArticles(gst.articles);
+    }
+  else if(props.category==='sports'){
+    setArticles(gssp.articles);
+    }
+  else if(props.category==='health'){
+    setArticles(gsh.articles);
+    }
+  else if(props.category==='entertainment'){
+    setArticles(gse.articles);
+    }
+  else if(props.category==='business'){
+    setArticles(gsb.articles);
+    }   
+})
+  
+  console.log(articles);
+
+  const { mode, altermode } = props;
+  const stylingbody = {
+    color: mode,
+    backgroundColor: altermode,
+  };
+  return (
+    // Cleanup function (optional) runs when component unmounts or before next effect execution
+    <>
       <div style={stylingbody}>
         <h1 className="text-center">
           <b>{props.category} highlights</b>
         </h1>
-        {loading && <Spinner />}
-        <InfiniteScroll
-          dataLength={articles.length}
-          next={fetchMoreData}
-          hasMore={articles.length!==totalResults}
-          loader={<Spinner/>}
-        >
           <div className="container">
-        <div className="row">
-          {
-            articles.length > 0 &&
-            articles.map((element) => (
-              <div className="col-md-4 my-5" key={element.url}>
-                <Newsitem
-                  title={element.title}
-                  description={element.description}
-                  imageurl={element.urlToImage}
-                  newsUrl={element.url}
-                  date={element.publishedAt}
-                  publisher={
-                    element.author === null ? "Unknown" : element.author
-                  }
-                  studio={element.source.name}
-                />
-              </div>
-            ))}
-        </div>
-        </div>
-        </InfiniteScroll>
-        <div className="container d-flex justify-content-evenly">
-        </div>
-      
+            <div className="row">
+              {articles.length > 0 &&
+                articles.map((element) => (
+                  <div className="col-md-4 my-5" key={element.url}>
+                    <Newsitem
+                      title={element.title}
+                      description={element.description}
+                      imageurl={element.urlToImage}
+                      newsUrl={element.url}
+                      date={element.publishedAt}
+                      publisher={
+                        element.author === null ? "Unknown" : element.author
+                      }
+                      studio={element.source.name}
+                    />
+                  </div>
+                ))}
+            </div>
+          </div>
+        <div className="container d-flex justify-content-evenly"></div>
+        <button type="button" className="btn btn-dark mx-5">Previuos</button>
+        <button type="button" className="btn btn-dark mx-5">next</button>
       </div>
-      </>
-    );
-}
-  Newscomp.defaultProps = {
+    </>
+  );
+  // This JSX content is returned after the above code runs
+};
+Newscomp.defaultProps = {
   // proptype can also be written
   country: "in", // it's mean by default country is india
   ps: 6,
@@ -154,26 +143,43 @@ export default Newscomp;
   // };
 */
 
+// <button
+//   type="button"
+//   disabled={page <= 1}
+//   className="btn btn-dark mx-3"
+//   onClick={presa}
+// >
+//   &larr; Prev
+// </button>
+// <button
+//   type="button"
+//   disabled={
+//     page >=
+//     Math.ceil(totalResults / props.ps)
+//   }
+//   className="btn btn-dark mx-3"
+//   onClick={nexta}
+// >
+//   Next &rarr;
+// </button>
 
 
 
 
-          // <button
-          //   type="button"
-          //   disabled={page <= 1}
-          //   className="btn btn-dark mx-3"
-          //   onClick={presa}
-          // >
-          //   &larr; Prev
-          // </button>
-          // <button
-          //   type="button"
-          //   disabled={
-          //     page >=
-          //     Math.ceil(totalResults / props.ps)
-          //   }
-          //   className="btn btn-dark mx-3"
-          //   onClick={nexta}
-          // >
-          //   Next &rarr;
-          // </button> 
+  // const updateNews = async () => {
+  //   // console.log('cdm');
+  //   let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=70dc53c6270d49b7a04a54041fc82b0b&page=1&pageSize=${props.ps}`;
+  //   // fetchng api;
+  //   setLoading(true);
+  //   let data = await fetch(url);
+  //   let parseddata = await data.json();
+  //   // console.log(parseddata)
+  //   setArticles(parseddata.articles);
+  //   setTotalResults(parseddata.totalResults);
+  //   setLoading(false);
+  // };
+  // useEffect(() => {
+  //   // This function runs after the JSX content is returned
+  //   document.title = `News Monkey -${props.category}`;
+  //   updateNews();
+  // }, [props.category, props.country, props.ps]);
